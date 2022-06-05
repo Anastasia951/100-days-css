@@ -1,0 +1,77 @@
+body {
+  font-family: 'Courier New';
+  font-size: 1rem;
+  color: white;
+  font-weight: 600;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.block {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(to right top, #2a41c0, #52cace);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.days {
+  font-size: 5rem;
+}
+.css-challenge {
+  font-size: 1.45rem;
+}
+.digits {
+  display: flex;
+  position: relative;
+  left: 10px;
+}
+.one-first {
+  width: 25px;
+  height: 100px;
+  background-color: white;
+  position: relative;
+  z-index: 5;
+  top: 0;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+.one-second {
+  width: 20px;
+  height: 40px;
+  background-color: #eeeeee;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 1px;
+  border-radius: 2px;
+  left: -16px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+.one {
+  position: relative;
+}
+
+.zero {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  border-radius: 50%;
+  border: 25px solid white;
+  z-index: 10;
+}
+.zero-first {
+  position: relative;
+  left: -5px;
+}
+.zero-second {
+  position: relative;
+  left: -10px;
+}
