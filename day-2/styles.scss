@@ -1,0 +1,162 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background: rgb(21, 168, 107);
+  border-radius: 5px;
+  position: relative;
+}
+
+.burger {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 52px;
+  transform: translate(-50%, -50%);
+  &.active {
+    span {
+      animation: line-2-rev 0.7s 1 forwards;
+    }
+    &::before {
+      animation: line-1-rev 0.7s 1 forwards;
+    }
+    &::after {
+      animation: line-3-rev 0.7s 1 forwards;
+    }
+  }
+  span,
+  &::before,
+  &::after {
+    position: absolute;
+    background-color: white;
+    display: block;
+    height: 8px;
+    width: 100%;
+    border-radius: 4px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+  }
+  span {
+    top: calc(50% - 4px);
+    animation: line-2 0.7s 1 forwards;
+  }
+  &::before,
+  &::after {
+    content: '';
+  }
+  &::before {
+    top: 0;
+    animation: line-1 0.7s 1 forwards;
+  }
+  &::after {
+    bottom: -8px;
+    animation: line-3 0.7s 1 forwards;
+  }
+}
+
+@keyframes line-1 {
+  0% {
+    top: 0;
+  }
+  33% {
+    transform: none;
+  }
+  67% {
+    transform: rotate(45deg);
+    top: calc(50% - 4px);
+  }
+  100% {
+    top: calc(50% - 4px);
+    transform: rotate(45deg);
+  }
+}
+@keyframes line-3 {
+  0% {
+    bottom: -8px;
+  }
+  33% {
+    transform: none;
+  }
+  67% {
+    transform: rotate(135deg);
+    bottom: calc(50% - 4px);
+  }
+  100% {
+    bottom: calc(50% - 4px);
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes line-2 {
+  0% {
+    transform: scale(1);
+  }
+  67% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(0);
+  }
+}
+
+@keyframes line-1-rev {
+  100% {
+    top: 0;
+  }
+  67% {
+    transform: none;
+  }
+  33% {
+    transform: rotate(45deg);
+    top: calc(50% - 4px);
+  }
+  0% {
+    top: calc(50% - 4px);
+    transform: rotate(45deg);
+  }
+}
+@keyframes line-3-rev {
+  100% {
+    bottom: 0;
+  }
+  67% {
+    transform: none;
+  }
+  33% {
+    transform: rotate(135deg);
+    bottom: calc(50% - 4px);
+  }
+  0% {
+    bottom: calc(50% - 4px);
+    transform: rotate(135deg);
+  }
+}
+
+@keyframes line-2-rev {
+  100% {
+    transform: scale(1);
+  }
+  33% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+}
