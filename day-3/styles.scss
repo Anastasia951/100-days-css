@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background-color: #272c34;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-circle {
+  background-color: lightblue;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  animation: main 3s infinite;
+}
+
+.ground {
+  background-color: rgb(255, 228, 140);
+  width: 200px;
+  height: 70px;
+  bottom: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.pyramid,
+.pyramid-left,
+.pyramid-right,
+.sun,
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+svg {
+  width: 100%;
+  height: 100%;
+}
+
+.pyramid-left {
+  svg {
+    polygon {
+      fill: #fefefe;
+      animation: pyramid-left 3s infinite;
+    }
+  }
+}
+
+.pyramid-right {
+  svg {
+    polygon {
+      fill: #999;
+      animation: pyramid-right 3s infinite;
+    }
+  }
+}
+.shadow {
+  width: 100%;
+  height: 30px;
+  background: #c29638;
+  top: 130px;
+  // clip-path: polygon(45px 0%, 155px 0%, 120px 100%);
+  animation: shadow 3s infinite;
+}
+
+.sun {
+  transform-origin: 50% 50%;
+  transform: rotate(15deg);
+  animation: sun 3s infinite;
+  top: 60px;
+  height: 110%;
+  width: 102%;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    height: 30px;
+    background-color: yellow;
+  }
+}
+
+@keyframes pyramid-left {
+  0% {
+    fill: #fefefe;
+  }
+  50% {
+    fill: #fefefe;
+  }
+  100% {
+    fill: #999;
+  }
+}
+@keyframes pyramid-right {
+  0% {
+    fill: #ccc;
+  }
+  55% {
+    fill: #ccc;
+  }
+  100% {
+    fill: #fefefe;
+  }
+}
+@keyframes main {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  67% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes sun {
+  0% {
+    transform: rotate(-15deg);
+  }
+  40% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(110deg);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    clip-path: polygon(45px 0%, 155px 0%, 200px 20%);
+  }
+  40% {
+    clip-path: polygon(45px 0%, 155px 0%, 160px 100%);
+  }
+  100% {
+    clip-path: polygon(45px 0%, 155px 0%, 0 50%);
+  }
+}
