@@ -1,0 +1,86 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+
+.book {
+  height: 300px;
+  width: 200px;
+  background: linear-gradient(45deg, #1e1e1e 0%, #4f4f4f 100%);
+  border-radius: 0 5px 5px 0;
+  position: relative;
+}
+
+.book::before {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 25px;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(255, 255, 255, 0)), color-stop(20%, rgba(255, 255, 255, 0.1)), color-stop(45%, rgba(255, 255, 255, 0.1)), color-stop(49%, rgba(0, 0, 0, 0.15)), color-stop(84%, rgba(0, 0, 0, 0.15)), to(rgba(0, 0, 0, 0)));
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 20%, rgba(255, 255, 255, 0.1) 45%, rgba(0, 0, 0, 0.15) 49%, rgba(0, 0, 0, 0.15) 84%, rgba(0, 0, 0, 0) 100%);
+}
+
+.book::after {
+  content: '';
+  width: 11px;
+  height: calc(100% + 4px);
+  top: -2px;
+  right: 30px;
+  border-radius: 2px;
+  position: absolute;
+  -webkit-box-shadow: -2px 0 5px rgba(0, 0, 0, 0.4);
+          box-shadow: -2px 0 5px rgba(0, 0, 0, 0.4);
+  background: -webkit-gradient(linear, left top, right top, from(#ad0000), color-stop(15%, #920000), color-stop(30%, #ad0000), color-stop(45%, #920000), color-stop(60%, #ad0000), color-stop(75%, #920000), color-stop(90%, #ad0000), to(#920000));
+  background: linear-gradient(to right, #ad0000 0% 5%, #920000 15% 20%, #ad0000 30% 35%, #920000 45% 50%, #ad0000 60% 65%, #920000 75% 80%, #ad0000 90% 95%, #920000 100%);
+}
+
+.book .title {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.2rem;
+  position: relative;
+  left: 10%;
+  top: 50px;
+}
+
+.book .small {
+  font-size: 1rem;
+  color: #ccc;
+  font-weight: 100;
+  letter-spacing: 0.2px;
+}
