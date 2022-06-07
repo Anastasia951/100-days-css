@@ -1,0 +1,141 @@
+$brown: #75675c;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial;
+  color: $brown;
+}
+html,
+body {
+  height: 100%;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+  display: inline-block;
+}
+ul {
+  list-style: none;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background: linear-gradient(
+    to top right,
+    rgb(241, 171, 65),
+    rgb(189, 105, 37)
+  );
+  border-radius: 5px;
+}
+.card {
+  background-color: #fcfcfc;
+  display: flex;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+.card-first {
+  padding: 25px;
+}
+.card-second {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+  width: 100px;
+  &__block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border-bottom: 1px solid white;
+    background-color: #f5e8df;
+    transition: background-color 0.3s ease;
+    &:hover {
+      background-color: #f3d6c1;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    .number {
+      font-weight: 600;
+    }
+    .activity {
+      font-weight: 100;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+}
+.buttons > * {
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  padding: 10px 20px;
+  border: 1px solid $brown;
+  border-radius: 15px;
+  text-align: center;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $brown;
+    color: white;
+  }
+}
+
+.titles {
+  text-align: center;
+  margin: 20px 0;
+}
+.image-block {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 80px;
+  margin: 0 auto;
+  &:hover {
+    cursor: pointer;
+    .inner {
+      stroke-dashoffset: -180;
+    }
+    .outer {
+      stroke-dashoffset: 280;
+    }
+  }
+  img {
+    border-radius: 50%;
+    width: 100%;
+  }
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+circle {
+  fill: none;
+  stroke: $brown;
+  transition: all 1s ease;
+}
+.inner {
+  stroke-dasharray: 210 70;
+  stroke-dashoffset: 105;
+}
+.outer {
+  stroke-dasharray: 235 78;
+  stroke-dashoffset: -40;
+}
