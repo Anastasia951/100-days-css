@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: Arial;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 12px;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: #0c8b7a;
+  border-radius: 5px;
+}
+
+.report {
+  -webkit-box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.4);
+          box-shadow: 7px 7px 15px rgba(0, 0, 0, 0.4);
+  background-color: white;
+}
+
+.report > * {
+  line-height: 1.7;
+}
+
+.report__header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #ecbd75;
+  color: white;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 10px;
+  gap: 1rem;
+}
+
+.report__info h3 {
+  text-transform: uppercase;
+}
+
+.report__money p b {
+  font-size: 1rem;
+}
+
+.report__content {
+  background-color: white;
+  padding: 10px;
+  position: relative;
+}
+
+.report__values {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 2rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-bottom: 10px;
+}
+
+.report .views,
+.report .purchases {
+  position: relative;
+  font-size: 0.7rem;
+}
+
+.report .views::before,
+.report .purchases::before {
+  content: '';
+  display: block;
+  width: 15px;
+  height: 3px;
+  position: relative;
+  top: 11px;
+  left: -20px;
+  border-radius: 3px;
+}
+
+.report .views::before {
+  background-color: #f5645f;
+}
+
+.report .purchases::before {
+  background-color: #6383da;
+}
+
+.report__dates {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #bbb;
+  padding-top: 10px;
+}
+
+.report__graph {
+  position: relative;
+  min-height: 100px;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ececec), color-stop(1%, #fff), color-stop(49%, #ececec), color-stop(50%, #fff), color-stop(99%, #ececec));
+  background: linear-gradient(to bottom, #ececec 0% 1%, #fff 1% 49%, #ececec 49% 50%, #fff 50% 99%, #ececec 99% 100%);
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.dots-red circle {
+  fill: #f5645f;
+}
+
+.dots-blue circle {
+  fill: #6383da;
+}
