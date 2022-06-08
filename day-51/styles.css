@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: #003342;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.timer {
+  width: 100px;
+  height: 50px;
+  background-color: white;
+  border-radius: 5px;
+  -webkit-box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+          box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+.timer-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.digits {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.digits > * {
+  position: relative;
+}
+
+.digits.stop .first,
+.digits.stop .second,
+.digits.stop .third,
+.digits.stop .fourth {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+}
+
+.digits .first {
+  -webkit-animation: timer 10000s steps(10, end) infinite;
+          animation: timer 10000s steps(10, end) infinite;
+}
+
+.digits .second {
+  -webkit-animation: timer 1000s steps(10, end) infinite;
+          animation: timer 1000s steps(10, end) infinite;
+}
+
+.digits .third {
+  -webkit-animation: timer 100s steps(10, end) infinite;
+          animation: timer 100s steps(10, end) infinite;
+}
+
+.digits .fourth {
+  -webkit-animation: timer 10s steps(10, end) infinite;
+          animation: timer 10s steps(10, end) infinite;
+}
+
+.digits .flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 25%;
+          flex: 0 0 25%;
+}
+
+.digits .flex span {
+  display: inline-block;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  color: #2e7992;
+  font-family: 'Open Sans';
+}
+
+.actions {
+  color: white;
+  position: relative;
+  top: 20px;
+}
+
+.actions * {
+  visibility: hidden;
+  -webkit-transform: scale(0) translateX(-50%);
+          transform: scale(0) translateX(-50%);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.actions *.active {
+  visibility: visible;
+  -webkit-transform: scale(1.05) translateX(-50%);
+          transform: scale(1.05) translateX(-50%);
+}
+
+.actions .resume {
+  width: 25px;
+  height: 30px;
+  background-color: #fff;
+  -webkit-clip-path: polygon(0 0, 100% 50%, 0 100%);
+          clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.actions .pause {
+  width: 25px;
+  height: 30px;
+}
+
+.actions .pause::before, .actions .pause::after {
+  content: '';
+  width: 7px;
+  height: 100%;
+  background-color: #fff;
+  position: absolute;
+}
+
+.actions .pause::before {
+  left: 0;
+}
+
+.actions .pause::after {
+  right: 0;
+}
+
+@-webkit-keyframes timer {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -500px;
+  }
+}
+
+@keyframes timer {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -500px;
+  }
+}

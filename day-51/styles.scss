@@ -1,0 +1,133 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(0, 51, 66);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+.timer {
+  width: 100px;
+  height: 50px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+.timer-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.digits {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  & > * {
+    position: relative;
+  }
+  &.stop {
+    .first,
+    .second,
+    .third,
+    .fourth {
+      animation-play-state: paused;
+    }
+  }
+  .first {
+    animation: timer 10000s steps(10, end) infinite;
+  }
+  .second {
+    animation: timer 1000s steps(10, end) infinite;
+  }
+  .third {
+    animation: timer 100s steps(10, end) infinite;
+  }
+  .fourth {
+    animation: timer 10s steps(10, end) infinite;
+  }
+  .flex {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 25%;
+    span {
+      display: inline-block;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      color: rgb(46, 121, 146);
+      font-family: 'Open Sans';
+    }
+  }
+}
+.actions {
+  color: white;
+  position: relative;
+  top: 20px;
+  & * {
+    &.active {
+      visibility: visible;
+      transform: scale(1.05) translateX(-50%);
+    }
+    visibility: hidden;
+    transform: scale(0) translateX(-50%);
+    transform-origin: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+  }
+  .resume {
+    width: 25px;
+    height: 30px;
+    background-color: #fff;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+  .pause {
+    width: 25px;
+    height: 30px;
+    &::before,
+    &::after {
+      content: '';
+      width: 7px;
+      height: 100%;
+      background-color: #fff;
+      position: absolute;
+    }
+    &::before {
+      left: 0;
+    }
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+@keyframes timer {
+  0% {
+    top: 0;
+  }
+  100% {
+    top: -500px;
+  }
+}
