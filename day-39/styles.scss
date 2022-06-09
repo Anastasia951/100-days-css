@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(65, 81, 109);
+  border-radius: 5px;
+  position: relative;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: 'Open Sans';
+  animation: menu 1.5s ease forwards;
+  transition: color 0.3s ease;
+  font-weight: 700;
+  &:hover {
+    color: rgb(180, 196, 221);
+  }
+}
+ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  position: relative;
+  &::before,
+  &::after {
+    content: '';
+    height: 3px;
+    background-color: #fff;
+    position: absolute;
+    width: 30px;
+    left: calc(50% - 15px);
+  }
+  &::before {
+    top: 0;
+    animation: lines-before 1.5s ease forwards;
+  }
+  &::after {
+    bottom: 0;
+    animation: lines-after 1.5s ease forwards;
+  }
+  &.close {
+    &::before {
+      animation: lines-before-rev 1.5s ease forwards;
+    }
+    &::after {
+      animation: lines-after-rev 1.5s ease forwards;
+    }
+    a {
+      animation: menu-rev 1.5s ease forwards;
+    }
+  }
+}
+
+@keyframes lines-before {
+  0% {
+    top: 0;
+    width: 30px;
+  }
+  30% {
+    top: -20px;
+    width: 30px;
+    left: calc(50% - 15px);
+  }
+  100% {
+    left: 0;
+    top: -20px;
+    width: 100%;
+  }
+}
+
+@keyframes lines-after {
+  0% {
+    bottom: 0;
+    width: 30px;
+  }
+  30% {
+    bottom: -20px;
+    width: 30px;
+    left: calc(50% - 15px);
+  }
+  100% {
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+  }
+}
+@keyframes menu {
+  0% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  70% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes lines-before-rev {
+  100% {
+    top: 0;
+    width: 30px;
+  }
+  70% {
+    top: -20px;
+    width: 30px;
+    left: calc(50% - 15px);
+  }
+  0% {
+    left: 0;
+    top: -20px;
+    width: 100%;
+  }
+}
+
+@keyframes lines-after-rev {
+  100% {
+    bottom: 0;
+    width: 30px;
+  }
+  70% {
+    bottom: -20px;
+    width: 30px;
+    left: calc(50% - 15px);
+  }
+  0% {
+    left: 0;
+    bottom: -20px;
+    width: 100%;
+  }
+}
+@keyframes menu-rev {
+  100% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  30% {
+    visibility: hidden;
+    opacity: 0;
+  }
+  0% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
