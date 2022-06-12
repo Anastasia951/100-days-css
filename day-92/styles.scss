@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans';
+}
+.checkbox {
+  position: relative;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(32, 122, 29);
+  border-radius: 5px;
+  position: relative;
+}
+.dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  border-radius: 50%;
+  &-1,
+  &-2 {
+    top: calc(50% - 5px);
+    left: 0;
+  }
+  &-3,
+  &-4 {
+    top: 0;
+    left: 0;
+  }
+  &-5,
+  &-6 {
+    top: 0;
+    left: calc(50% - 5px);
+  }
+  &-7,
+  &-8 {
+    top: 0;
+    left: calc(100% - 10px);
+  }
+  &-9,
+  &-10 {
+    top: calc(50% - 5px);
+    left: calc(100% - 10px);
+  }
+  &-11,
+  &-12 {
+    top: calc(100% - 10px);
+    left: calc(100% - 10px);
+  }
+  &-13,
+  &-14 {
+    left: calc(50% - 5px);
+    top: calc(100% - 10px);
+  }
+  &-15,
+  &-16 {
+    left: 0;
+    top: calc(100% - 10px);
+  }
+}
+@for $i from 1 to 17 {
+  .dot-#{$i} {
+    @if (($i % 4) == 3) or (($i % 4) == 0) {
+      animation: ball-#{$i} 3s linear infinite alternate;
+    } @else {
+      animation: ball-#{$i} 1.7s linear infinite alternate;
+    }
+  }
+}
+@keyframes ball-1 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(195px, 195px);
+  }
+}
+@keyframes ball-2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(195px, -195px);
+  }
+}
+@keyframes ball-3 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(390px, 195px);
+  }
+}
+
+@keyframes ball-4 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(195px, 390px);
+  }
+}
+
+@keyframes ball-5 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-195px, 195px);
+  }
+}
+@keyframes ball-6 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(195px, 195px);
+  }
+}
+@keyframes ball-7 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-390px, 195px);
+  }
+}
+
+@keyframes ball-8 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-195px, 390px);
+  }
+}
+@keyframes ball-9 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-195px, -195px);
+  }
+}
+@keyframes ball-10 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-195px, 195px);
+  }
+}
+
+@keyframes ball-11 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-195px, -390px);
+  }
+}
+@keyframes ball-12 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-390px, -195px);
+  }
+}
+@keyframes ball-13 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-195px, -195px);
+  }
+}
+
+@keyframes ball-14 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(195px, -195px);
+  }
+}
+
+@keyframes ball-15 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(195px, -390px);
+  }
+}
+
+@keyframes ball-16 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(390px, -195px);
+  }
+}
