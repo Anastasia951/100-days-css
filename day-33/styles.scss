@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(122, 184, 255);
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+.sun {
+  position: absolute;
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  background-color: rgb(255, 209, 59);
+  top: 50px;
+  left: 100px;
+}
+svg,
+.cloud {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.cloud-1 {
+  position: absolute;
+  top: 150px;
+  left: -150px;
+  animation: cloud 60s linear infinite alternate;
+}
+.cloud-2 {
+  position: absolute;
+  top: 120px;
+  left: -150px;
+  animation: cloud 40s linear infinite alternate;
+}
+.cloud-3 {
+  position: absolute;
+  top: 70px;
+  left: -150px;
+  animation: cloud 50s linear infinite alternate;
+}
+svg {
+  z-index: 5;
+}
+@keyframes cloud {
+  0% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(560px);
+  }
+}
