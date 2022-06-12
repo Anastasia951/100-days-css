@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Open Sans';
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(41, 139, 219);
+  border-radius: 5px;
+  position: relative;
+}
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  position: absolute;
+  top: calc(50% - 60px);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.4);
+}
+.form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+}
+.icon-search {
+  font-size: 1.5rem;
+  position: absolute;
+  right: 10px;
+}
+input {
+  font: inherit;
+  outline: none;
+  border: none;
+  padding: 15px 40px 15px 15px;
+  width: 100%;
+  color: rgb(41, 139, 219);
+  font-weight: bold;
+}
+input::-webkit-input-placeholder {
+  color: #ccc;
+}
+.text {
+  display: none;
+  background: white;
+  border-top: 1px solid rgb(41, 139, 219);
+  &.visible {
+    display: block;
+  }
+}
+
+.hint {
+  padding: 15px;
+  &:hover {
+    color: rgb(41, 139, 219);
+    cursor: pointer;
+  }
+}
