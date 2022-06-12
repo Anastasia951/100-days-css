@@ -1,0 +1,71 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(15, 161, 105);
+  border-radius: 5px;
+  position: relative;
+}
+.line {
+  overflow: visible;
+  path {
+    stroke: white;
+    stroke-width: 3;
+    stroke-dasharray: 40 690;
+    stroke-linecap: round;
+    animation: stroke 2s linear infinite;
+  }
+}
+.ring {
+  position: absolute;
+  top: 200px;
+  left: 160px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 5px solid white;
+  animation: size 2s ease infinite;
+}
+@keyframes size {
+  0% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(0);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+@keyframes stroke {
+  0% {
+    stroke-dashoffset: 50;
+  }
+  100% {
+    stroke-dashoffset: -670;
+  }
+}
