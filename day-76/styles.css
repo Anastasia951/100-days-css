@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Open Sans';
+  color: white;
+}
+
+.wrapper {
+  width: 400px;
+  height: 400px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  background-color: #333a5c;
+}
+
+.wrapper.open input {
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  visibility: hidden;
+}
+
+.wrapper.open .true-text {
+  visibility: visible;
+}
+
+.shadow {
+  position: absolute;
+  top: calc(50% - 20px);
+  left: calc(50% - 100px);
+  width: 200px;
+  -webkit-box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+input {
+  font: inherit;
+  position: absolute;
+  top: 0;
+  height: 40px;
+  width: 100%;
+  text-align: center;
+  outline: none;
+  border: none;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  z-index: 5;
+}
+
+.true-text {
+  position: absolute;
+  top: -80px;
+  height: 40px;
+  width: 100%;
+  background-color: white;
+  color: #292929;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: calc(50% - 60px);
+  left: calc(50% - 100px);
+  visibility: hidden;
+  z-index: 10;
+  -webkit-transition: all 0.5s ease 0.2s;
+  transition: all 0.5s ease 0.2s;
+}
+
+.key {
+  position: relative;
+  top: calc(50% - 20px);
+  left: calc(50% - 100px);
+  width: 200px;
+  height: 40px;
+  background-color: #52cc62;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
