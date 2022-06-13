@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(34, 44, 61);
+  border-radius: 5px;
+  position: relative;
+}
+.candle {
+  width: 70px;
+  height: 110px;
+  background-color: rgb(210, 239, 255);
+  border-radius: 3px;
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    width: 55px;
+    height: 100%;
+    background-color: white;
+    top: 0;
+    z-index: 6;
+    left: 0;
+    border-radius: 3px;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    height: 7px;
+    left: -50%;
+    border-radius: 5px;
+    background-color: rgb(12, 16, 24);
+    width: 200%;
+  }
+  .fire {
+    height: 20px;
+    width: 12px;
+    background-color: rgb(255, 176, 6);
+    box-shadow: 0 0 15px rgb(255, 176, 6);
+    position: absolute;
+    top: -30px;
+    left: calc(50% - 7.5px);
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border-top-right-radius: 10%;
+    border-top-left-radius: 100%;
+    animation: candle 3s linear infinite alternate;
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      left: calc(50% - 1px);
+      width: 2px;
+      height: 20px;
+      background-color: brown;
+      z-index: 3;
+    }
+  }
+}
+
+@keyframes candle {
+  0% {
+    border-top-right-radius: 10%;
+    border-top-left-radius: 100%;
+  }
+  50% {
+    transform: scaleY(1.2);
+    border-top-right-radius: 70%;
+    border-top-left-radius: 70%;
+  }
+  100% {
+    border-top-left-radius: 10%;
+    border-top-right-radius: 100%;
+  }
+}
