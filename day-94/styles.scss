@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(213, 241, 220);
+  border-radius: 5px;
+  position: relative;
+}
+
+.leaves-1,
+.leaves-2 {
+  position: absolute;
+  width: 60px;
+  height: 170px;
+  top: 60px;
+  left: 50%;
+  transform-origin: left bottom;
+  animation: leaves 1.2s ease-in-out 0.2s backwards;
+}
+.leaves-1 {
+  background-color: rgb(209, 58, 47);
+  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+}
+.leaves-2 {
+  clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+  background-color: rgb(150, 5, 5);
+  transform: scaleX(-1);
+}
+
+.tree {
+  animation: tree 1s ease-in-out;
+  transform-origin: center bottom;
+  position: relative;
+  &::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background-color: rgb(168, 216, 180);
+    position: absolute;
+    bottom: -2px;
+    left: -28px;
+    z-index: 10;
+    border-radius: 2px;
+    animation: shadow 1s ease-in-out;
+  }
+  .line {
+    height: 180px;
+    width: 4px;
+    background-color: rgb(253, 203, 129);
+    border-radius: 2px;
+    position: relative;
+    z-index: 5;
+  }
+  .branch {
+    position: absolute;
+    width: 4px;
+    height: 50px;
+    background-color: rgb(253, 203, 129);
+    transform-origin: center bottom;
+    border-radius: 2px;
+    &:nth-child(odd) {
+      transform: rotate(-43deg);
+    }
+    &:nth-child(even) {
+      transform: rotate(43deg);
+    }
+    &:nth-child(1) {
+      top: 0px;
+      height: 20px;
+    }
+    &:nth-child(2) {
+      top: 15px;
+      height: 30px;
+    }
+    &:nth-child(3) {
+      top: 30px;
+      height: 40px;
+    }
+    &:nth-child(4) {
+      top: 45px;
+      height: 50px;
+    }
+    &:nth-child(5) {
+      top: 60px;
+      height: 50px;
+    }
+  }
+}
+
+@keyframes tree {
+  0% {
+    visibility: hidden;
+    transform: scaleY(0.4) translateY(-50px);
+  }
+  60% {
+    visibility: visible;
+    transform: scaleY(1.1) translateY(0);
+  }
+  100% {
+    transform: scaleY(1) translateY(0);
+    visibility: visible;
+  }
+}
+
+@keyframes leaves {
+  0%,
+  60% {
+    visibility: hidden;
+    width: 0;
+  }
+  100% {
+    visibility: visible;
+    width: 60px;
+  }
+}
+
+@keyframes shadow {
+  0% {
+    transform: scaleX(0);
+  }
+  60% {
+    transform: scaleX(1.1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
