@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: #293550;
+  border-radius: 5px;
+  position: relative;
+}
+
+.cradle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 250px;
+}
+
+.cradle::before {
+  content: '';
+  position: absolute;
+  top: -110px;
+  left: 0;
+  right: 0;
+  height: 10px;
+  background-color: #969696;
+  border-radius: 3px;
+  z-index: 5;
+}
+
+.cradle .ball {
+  width: 45px;
+  height: 45px;
+  background-color: white;
+  border-radius: 50%;
+  position: relative;
+  -webkit-transform-origin: center -110px;
+          transform-origin: center -110px;
+}
+
+.cradle .ball:nth-child(1) {
+  -webkit-animation: rotate 1.5s linear infinite;
+          animation: rotate 1.5s linear infinite;
+}
+
+.cradle .ball:last-child {
+  -webkit-animation: rotate-2 1.5s linear infinite;
+          animation: rotate-2 1.5s linear infinite;
+}
+
+.cradle .ball::before {
+  content: '';
+  height: 100px;
+  width: 1px;
+  background-color: white;
+  position: absolute;
+  bottom: 45px;
+  left: 50%;
+}
+
+@-webkit-keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  50%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  25% {
+    -webkit-transform: rotate(30deg);
+            transform: rotate(30deg);
+  }
+  50%,
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@-webkit-keyframes rotate-2 {
+  0%,
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  75% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+
+@keyframes rotate-2 {
+  0%,
+  50% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  75% {
+    -webkit-transform: rotate(-30deg);
+            transform: rotate(-30deg);
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
