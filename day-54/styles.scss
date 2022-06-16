@@ -1,0 +1,107 @@
+$circleSize: 40px;
+$darkBlue: rgb(23, 34, 71);
+$thirdWaveColor: rgb(53, 73, 112);
+$secondWaveColor: rgb(91, 122, 179);
+$firstWaveColor: rgb(143, 181, 250);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: $darkBlue;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.wave {
+  content: '';
+  position: absolute;
+  width: calc(100% + $circleSize);
+  bottom: 0;
+  left: 0;
+  display: flex;
+  &-1 {
+    background-color: $firstWaveColor;
+    animation: moveWave-1 2s ease-in-out infinite alternate;
+    .circle {
+      &:nth-child(odd) {
+        background: $secondWaveColor;
+      }
+    }
+  }
+  &-2 {
+    background-color: $secondWaveColor;
+    animation: moveWave-2 5s ease-in-out infinite alternate;
+    .circle {
+      &:nth-child(odd) {
+        background: $thirdWaveColor;
+      }
+    }
+  }
+  &-3 {
+    background-color: $thirdWaveColor;
+    animation: moveWave-3 3s ease-in-out infinite alternate;
+    .circle {
+      &:nth-child(odd) {
+        background: $darkBlue;
+      }
+    }
+  }
+  @for $i from 1 to 4 {
+    &-#{$i} {
+      height: $i * $circleSize * 1.3;
+      z-index: 4 - $i;
+    }
+  }
+  .circle {
+    width: $circleSize;
+    height: $circleSize;
+    background-color: inherit;
+    border-radius: 50%;
+    position: relative;
+    top: -($circleSize/2);
+    flex: 0 0 $circleSize;
+  }
+}
+
+@keyframes moveWave-3 {
+  0% {
+    transform: translateX(-($circleSize / 2));
+  }
+  100% {
+    transform: translateX(-$circleSize * 3 / 2);
+  }
+}
+
+@keyframes moveWave-2 {
+  100% {
+    transform: translateX(-($circleSize / 2));
+  }
+  0% {
+    transform: translateX(-$circleSize);
+  }
+}
+
+@keyframes moveWave-1 {
+  0% {
+    transform: translateX(-($circleSize / 2));
+  }
+  100% {
+    transform: translateX(-$circleSize * 2);
+  }
+}
