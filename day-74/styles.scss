@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Open Sans';
+}
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: rgb(32, 214, 184);
+  border-radius: 5px;
+}
+label {
+  border: 1px solid white;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 4;
+  transition: all 0.4s ease;
+
+  &::before {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    transform: scale(0);
+    border-radius: 50%;
+    border: 1px solid white;
+    transition: all 0.3s ease;
+  }
+  &:hover {
+    background-color: rgb(33, 199, 171);
+  }
+}
+input {
+  appearance: none;
+  &:checked {
+    & + label {
+      &::before {
+        transform: scale(1);
+      }
+      color: rgb(32, 214, 184);
+    }
+  }
+}
+.pagination {
+  display: flex;
+  gap: 7px;
+}
