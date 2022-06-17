@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: #292433;
+  border-radius: 5px;
+  position: relative;
+}
+
+.lamp {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 3px;
+}
+
+.glow {
+  -webkit-box-shadow: 0 0 70px 40px #fae050;
+          box-shadow: 0 0 70px 40px #fae050;
+  position: absolute;
+  right: 50%;
+  top: 180px;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+}
+
+.bulb {
+  fill: #fae050;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.bulb:hover {
+  fill: #aaa;
+}
+
+.bulb:hover ~ .glow {
+  opacity: 0;
+}
+
+.base {
+  fill: #ccc;
+}
