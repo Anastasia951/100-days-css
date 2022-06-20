@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 400px;
+  height: 400px;
+  background-color: #ccc;
+  border-radius: 5px;
+  position: relative;
+}
+
+.cube {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translateY(20px) rotateX(-25deg) rotateY(45deg);
+          transform: translateY(20px) rotateX(-25deg) rotateY(45deg);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.cube:hover {
+  -webkit-transform: translateY(20px) rotateX(-120deg) rotateZ(135deg);
+          transform: translateY(20px) rotateX(-120deg) rotateZ(135deg);
+}
+
+.side {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  opacity: 0.4;
+}
+
+.side-front {
+  -webkit-transform: rotateY(0deg) translateZ(100px);
+          transform: rotateY(0deg) translateZ(100px);
+  background: red;
+}
+
+.side-back {
+  -webkit-transform: translateZ(-100px);
+          transform: translateZ(-100px);
+  background: green;
+}
+
+.side-right {
+  -webkit-transform: rotateY(90deg) translateZ(100px);
+          transform: rotateY(90deg) translateZ(100px);
+  background: blue;
+}
+
+.side-left {
+  -webkit-transform: rotateY(-90deg) translateZ(100px);
+          transform: rotateY(-90deg) translateZ(100px);
+  background: yellow;
+}
+
+.side-top {
+  -webkit-transform: rotateX(90deg) translateZ(100px);
+          transform: rotateX(90deg) translateZ(100px);
+  background: orange;
+}
+
+.side-bottom {
+  -webkit-transform: rotateX(-90deg) translateZ(100px);
+          transform: rotateX(-90deg) translateZ(100px);
+  background: violet;
+}
