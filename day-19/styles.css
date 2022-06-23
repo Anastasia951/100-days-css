@@ -1,0 +1,137 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all 0.7s ease;
+  transition: all 0.7s ease;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Open Sans';
+}
+
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background-color: #463c3c;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+}
+
+input {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+input:checked + label {
+  cursor: auto;
+}
+
+label {
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
+  z-index: 6;
+  cursor: pointer;
+}
+
+#radio1:checked ~ .bg {
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
+#radio1:checked ~ .circle {
+  -webkit-transform: translateX(-85px);
+          transform: translateX(-85px);
+}
+
+#radio2:checked ~ .bg {
+  -webkit-transform: translate(-400px);
+          transform: translate(-400px);
+}
+
+#radio2:checked ~ .circle {
+  -webkit-transform: translateX(calc(-50% + 5px));
+          transform: translateX(calc(-50% + 5px));
+}
+
+#radio3:checked ~ .bg {
+  -webkit-transform: translate(-800px);
+          transform: translate(-800px);
+}
+
+#radio3:checked ~ .circle {
+  -webkit-transform: translateX(55px);
+          transform: translateX(55px);
+}
+
+.bg {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.bg > * {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 400px;
+          flex: 0 0 400px;
+}
+
+.bg .violet {
+  background-color: #9d3eb9;
+}
+
+.bg .blue {
+  background-color: #329cf1;
+}
+
+.bg .green {
+  background-color: #43d892;
+}
+
+.circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  z-index: 5;
+  border-radius: 50%;
+  left: 50%;
+}

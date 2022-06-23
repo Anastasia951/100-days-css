@@ -1,0 +1,100 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.7s ease;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Open Sans';
+}
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(70, 60, 60);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+input {
+  appearance: none;
+  &:checked + label {
+    cursor: auto;
+  }
+}
+label {
+  width: 50px;
+  height: 50px;
+  border: 2px solid white;
+  border-radius: 50%;
+  z-index: 6;
+  cursor: pointer;
+}
+#radio1:checked {
+  & ~ .bg {
+    transform: translate(0);
+  }
+  & ~ .circle {
+    transform: translateX(-85px);
+  }
+}
+#radio2:checked {
+  & ~ .bg {
+    transform: translate(-400px);
+  }
+  & ~ .circle {
+    transform: translateX(calc(-50% + 5px));
+  }
+}
+#radio3:checked {
+  & ~ .bg {
+    transform: translate(-800px);
+  }
+  & ~ .circle {
+    transform: translateX(55px);
+  }
+}
+.bg {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  & > * {
+    flex: 0 0 400px;
+  }
+  .violet {
+    background-color: rgb(157, 62, 185);
+  }
+  .blue {
+    background-color: rgb(50, 156, 241);
+  }
+  .green {
+    background-color: rgb(67, 216, 146);
+  }
+}
+.circle {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: white;
+  z-index: 5;
+  border-radius: 50%;
+  left: 50%;
+}
