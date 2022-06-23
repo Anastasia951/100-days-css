@@ -33,7 +33,7 @@ body {
 
 @for $i from 1 through 10 {
   .square-#{$i} {
-    animation: rotate-#{$i} 5s ease-in-out ($i * 0.1) + s infinite alternate;
+    animation: rotate-#{$i} 4s ease-in-out ($i * 0.1) + s infinite alternate;
   }
   @keyframes rotate-#{$i} {
     0% {
