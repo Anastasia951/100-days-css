@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+img {
+  position: relative;
+  z-index: 5;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: white;
+  font-family: 'Open Sans';
+}
+.wrapper {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(70, 60, 60);
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  background-color: rgb(255, 207, 74);
+  box-shadow: 8px 10px 15px 0 rgba(0, 0, 0, 0.5);
+  width: 320px;
+  height: 200px;
+  border-radius: 5px;
+  transition: all 0.5s linear;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  position: relative;
+  &:hover {
+    transform: rotateX(180deg);
+    box-shadow: 8px -10px 15px 0 rgba(0, 0, 0, 0.5);
+  }
+}
+
+.bike,
+.helicopter {
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.bike-img {
+  animation: bike 0.3s ease infinite alternate;
+  transform-origin: bottom;
+}
+.ground {
+  display: flex;
+  align-items: center;
+  position: relative;
+  top: -10px;
+  width: 120%;
+  overflow: hidden;
+  justify-content: space-between;
+}
+.clouds {
+  position: absolute;
+  overflow: hidden;
+  width: 120%;
+  height: 120%;
+  top: 0;
+}
+.line {
+  height: 3px;
+  background-color: rgb(70, 60, 60);
+  @for $i from 1 through 9 {
+    &.line-#{$i} {
+      width: random(10) + 5 + px;
+      animation: ground (1.2 + random(2) / 8) + s linear infinite;
+    }
+  }
+}
+.helicopter {
+  .content {
+    position: relative;
+  }
+}
+.cloud {
+  height: 3px;
+  background-color: rgb(70, 60, 60);
+  position: absolute;
+  @for $i from 1 through 9 {
+    &.cloud-#{$i} {
+      top: random(95) + px;
+      width: random(20) + 10 + px;
+      animation: cloud (1 + random(2) / 8) + s linear infinite;
+    }
+  }
+}
+.helicopter {
+  transform: rotateX(180deg);
+  &-img {
+    animation: helicopter 1s linear infinite alternate;
+  }
+}
+
+@keyframes ground {
+  0% {
+    transform: translate(200px);
+  }
+  100% {
+    transform: translate(-200px);
+  }
+}
+@keyframes helicopter {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}
+@keyframes cloud {
+  0% {
+    transform: translate(200px);
+  }
+  100% {
+    transform: translate(-210px);
+  }
+}
+
+@keyframes bike {
+  0% {
+    transform: scaleY(1);
+  }
+  100% {
+    transform: scaleY(0.95);
+  }
+}
